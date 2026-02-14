@@ -17,4 +17,6 @@ ai:
     - "critical"
     - "high"
     - "medium"
+    - "low"
+    - "informational"
   max_findings: 25
