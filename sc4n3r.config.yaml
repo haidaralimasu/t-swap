@@ -1,0 +1,20 @@
+exclude_paths:
+  - "test/"
+  - "script/"
+  - "lib/"
+
+hide_severities: []
+
+fails_on: "high"
+
+mythril:
+  enabled: false
+  targets: []
+
+ai:
+  enabled: true
+  analyze_severities:
+    - "critical"
+    - "high"
+    - "medium"
+  max_findings: 25
