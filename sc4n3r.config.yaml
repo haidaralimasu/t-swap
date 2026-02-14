@@ -1,3 +1,7 @@
+setup_commands:
+  - "make all"
+  - "forge build"
+
 exclude_paths:
   - "test/"
   - "script/"
