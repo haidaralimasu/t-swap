@@ -1,0 +1,29 @@
+name: Security Scan
+
+on:
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: sc4n3r
+        uses: sc4n3r/scanner@v0.0.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: security-report
+          path: results/report.md

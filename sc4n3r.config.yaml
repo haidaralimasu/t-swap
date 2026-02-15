@@ -1,5 +1,5 @@
 setup_commands:
-  - "make all"
+  - "make install"
   - "forge build"
 
 exclude_paths:
@@ -17,6 +17,7 @@ mythril:
 
 ai:
   enabled: true
+  provider: "claude"
   analyze_severities:
     - "critical"
     - "high"
