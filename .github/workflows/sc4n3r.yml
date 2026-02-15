@@ -17,9 +17,10 @@ jobs:
           submodules: recursive
 
       - name: sc4n3r
-        uses: sc4n3r/scanner@v0.0.1
+        uses: sc4n3r/scanner@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          api_key: ${{ secrets.SC4N3R_API_KEY }}
 
       - name: Upload Report
         uses: actions/upload-artifact@v4
